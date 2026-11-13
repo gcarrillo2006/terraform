@@ -1,0 +1,31 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Terraform / OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Variable files hold environment details - only the example is committed
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Generated
+inventory
+
+# Keys
+ssh_privkey
+ssh_privkey.pub
+*.pem
+*.key

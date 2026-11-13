@@ -1,0 +1,38 @@
+# Copy to terraform.tfvars (git-ignored) and adjust to your environment.
+# Secrets are passed as environment variables, not in this file:
+#   export TF_VAR_proxmox_api_token_secret='<token-secret>'
+#   export TF_VAR_password='<vm-user-password>'
+
+proxmox_api_url      = "https://x.x.x.x:8006/api2/json"
+proxmox_api_token_id = "terraform-prov@pve!terraform"
+proxmox_tls_insecure = true # Proxmox ships a self-signed certificate
+proxmox_host         = "pve"
+
+os_template     = "alma9-cloud"
+gpu_os_template = "ubuntu22-cloud"
+
+master_node_instances = 3
+master_node_cpu_cores = 3
+master_node_memory    = 4096
+master_node_disk      = "40G"
+
+worker_node_instances = 4
+worker_node_cpu_cores = 3
+worker_node_memory    = 4096
+worker_node_disk      = "20G"
+
+worker_gpu_node_instances = 1
+worker_gpu_node_cpu_cores = 12
+worker_gpu_node_memory    = 32768
+worker_gpu_node_disk      = "300G"
+worker_gpu_node_address   = ["2b:00"]
+
+storage_node_instances = 0
+storage_node_cpu_cores = 4
+storage_node_memory    = 4096
+storage_node_disk      = "100G"
+
+k8s_proxy_hosts = ["x.x.x.x"]
+
+ssh_key         = "ssh-ed25519 AAAA... operator"
+ssh_key_cluster = "ssh-ed25519 AAAA... ansible"
