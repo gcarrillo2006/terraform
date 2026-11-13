@@ -1,0 +1,28 @@
+[k8s_proxy]
+%{ for ip in k8s_proxy ~}
+${ip}
+%{ endfor ~}
+
+[k8s_master]
+%{ for ip in k8s_master ~}
+${ip}
+%{ endfor ~}
+
+[k8s_worker]
+%{ for ip in k8s_worker ~}
+${ip}
+%{ endfor ~}
+
+[k8s_worker_gpu]
+%{ for ip in k8s_worker_gpu ~}
+${ip}
+%{ endfor ~}
+
+[k8s_storage]
+%{ for ip in k8s_storage ~}
+${ip}
+%{ endfor ~}
+
+[all:vars]
+ansible_user=${ansible_user}
+ansible_ssh_private_key_file=${ssh_private_key_file}
